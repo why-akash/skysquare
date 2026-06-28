@@ -208,26 +208,7 @@ export default function TechStack() {
     activeFilter === "All" ? TECHS : TECHS.filter((t) => t.category === activeFilter);
 
   return (
-    <>
-      {/* Inject blob keyframes */}
-      <style jsx global>{`
-        @keyframes blob-drift-a {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(60px, -40px) scale(1.08); }
-          66% { transform: translate(-30px, 30px) scale(0.95); }
-        }
-        @keyframes blob-drift-b {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          40% { transform: translate(-80px, 50px) scale(1.1); }
-          70% { transform: translate(40px, -30px) scale(0.92); }
-        }
-        @keyframes blob-drift-c {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(50px, -60px) scale(1.06); }
-        }
-      `}</style>
-
-      <section
+    <section
         className="py-28 px-6 relative overflow-hidden"
         ref={ref as React.RefObject<HTMLElement>}
       >
@@ -346,7 +327,6 @@ export default function TechStack() {
             We pick the best tool for each job — not the trendiest.
           </motion.p>
         </div>
-      </section>
-    </>
+    </section>
   );
 }

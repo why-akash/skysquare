@@ -43,35 +43,6 @@ const STATS = [
   { value: 4, suffix: "x", label: "Average ROI", sub: "For funded startups", color: "#f472b6" },
 ];
 
-/* ── Testimonials ──────────────────────────────────────────── */
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "NEXORA didn't just build what we asked for — they pushed back on bad ideas, improved the spec, and shipped something better than we imagined.",
-    author: "Sofia Chen",
-    role: "Co-founder, Meridian",
-    initials: "SC",
-    color: "#4f8ef7",
-  },
-  {
-    quote:
-      "The code quality and architecture were exceptional. Our new CTO reviewed the codebase and said it was the cleanest startup code he'd ever inherited.",
-    author: "James Okafor",
-    role: "CEO, Velox",
-    initials: "JO",
-    color: "#8b5cf6",
-  },
-  {
-    quote:
-      "They moved as fast as an internal team but brought the expertise of a senior agency. Six months in, we still haven't found a bug in production.",
-    author: "Priya Mehta",
-    role: "CPO, Luminary",
-    initials: "PM",
-    color: "#06b6d4",
-  },
-];
-
 /* ── Why cards ─────────────────────────────────────────────── */
 
 const WHY_CARDS = [
@@ -171,39 +142,6 @@ export default function WhyUs() {
           ))}
         </div>
 
-        {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {TESTIMONIALS.map((t, i) => (
-            <motion.div
-              key={t.author}
-              className="glass rounded-2xl p-6 flex flex-col justify-between"
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.35 + i * 0.1 }}
-            >
-              {/* Quote mark */}
-              <div
-                className="text-4xl font-serif mb-3 leading-none"
-                style={{ color: `${t.color}40` }}
-              >
-                "
-              </div>
-              <p className="text-white/55 text-sm leading-relaxed flex-1">{t.quote}</p>
-              <div className="flex items-center gap-3 mt-5 pt-5 border-t border-white/[0.06]">
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
-                  style={{ background: `${t.color}20`, color: t.color }}
-                >
-                  {t.initials}
-                </div>
-                <div>
-                  <div className="text-white text-sm font-medium">{t.author}</div>
-                  <div className="text-white/30 text-xs">{t.role}</div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
