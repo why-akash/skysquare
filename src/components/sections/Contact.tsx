@@ -18,14 +18,6 @@ type FormState = "idle" | "submitting" | "success";
 
 const FOUNDERS = [
   {
-    name: "Akash Kumar",
-    role: "Co-founder",
-    phone: "+91 78560 37431",
-    email: "akashkr.developer@gmail.com",
-    initials: "AK",
-    color: "#4f8ef7",
-  },
-  {
     name: "Akash Raj",
     role: "Co-founder",
     phone: "+91 91356 01036",
@@ -33,6 +25,15 @@ const FOUNDERS = [
     initials: "AR",
     color: "#8b5cf6",
   },
+  {
+    name: "Akash Kumar",
+    role: "Co-founder",
+    phone: "+91 78560 37431",
+    email: "akashkr.developer@gmail.com",
+    initials: "AK",
+    color: "#4f8ef7",
+  },
+  
 ];
 
 /* ── Input ──────────────────────────────────────────────────── */
