@@ -66,11 +66,11 @@ export default function Loader({
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: "48px",
+            gap: "clamp(20px, 4vh, 48px)",
           }}
         >
           {/* Logo letters */}
-          <div style={{ display: "flex", gap: "2px", overflow: "hidden" }}>
+          <div style={{ display: "flex", gap: "clamp(1px, 0.3vw, 3px)", overflow: "hidden", padding: "4px 0" }}>
             {letters.map((letter, i) => (
               <motion.span
                 key={i}
@@ -82,10 +82,10 @@ export default function Loader({
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 style={{
-                  fontSize: "clamp(36px, 7vw, 68px)",
+                  fontSize: "clamp(28px, 7vw, 68px)",
                   fontFamily: "var(--font-syne)",
                   fontWeight: 800,
-                  letterSpacing: "0.2em",
+                  letterSpacing: "clamp(0.06em, 1.2vw, 0.2em)",
                   color: "#ffffff",
                   display: "inline-block",
                 }}
@@ -104,8 +104,8 @@ export default function Loader({
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: "16px",
-              width: "min(280px, 70vw)",
+              gap: "12px",
+              width: "min(280px, 75vw)",
             }}
           >
             {/* Progress bar track */}
@@ -172,7 +172,7 @@ export default function Loader({
             transition={{ delay: 0.8 }}
             style={{
               position: "absolute",
-              bottom: "40px",
+              bottom: "clamp(16px, 4vh, 40px)",
               fontFamily: "var(--font-inter)",
               fontSize: "11px",
               letterSpacing: "0.2em",

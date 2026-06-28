@@ -143,33 +143,36 @@ function AnimatedBackground() {
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Moving gradient orbs */}
       <div
-        className="absolute rounded-full blur-3xl"
+        className="absolute rounded-full"
         style={{
-          width: 600,
-          height: 600,
-          background: "radial-gradient(circle, rgba(79,142,247,0.07) 0%, transparent 70%)",
+          width: "clamp(280px, 55vw, 700px)",
+          height: "clamp(280px, 55vw, 700px)",
+          background: "radial-gradient(circle, rgba(79,142,247,0.12) 0%, transparent 70%)",
+          filter: "blur(clamp(40px, 7vw, 100px))",
           top: "-10%",
-          left: "20%",
+          left: "15%",
           animation: "blob-drift-a 18s ease-in-out infinite",
         }}
       />
       <div
-        className="absolute rounded-full blur-3xl"
+        className="absolute rounded-full"
         style={{
-          width: 500,
-          height: 500,
-          background: "radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%)",
+          width: "clamp(240px, 48vw, 600px)",
+          height: "clamp(240px, 48vw, 600px)",
+          background: "radial-gradient(circle, rgba(139,92,246,0.10) 0%, transparent 70%)",
+          filter: "blur(clamp(40px, 7vw, 90px))",
           top: "40%",
-          right: "10%",
+          right: "5%",
           animation: "blob-drift-b 22s ease-in-out infinite",
         }}
       />
       <div
-        className="absolute rounded-full blur-3xl"
+        className="absolute rounded-full"
         style={{
-          width: 400,
-          height: 400,
-          background: "radial-gradient(circle, rgba(6,182,212,0.05) 0%, transparent 70%)",
+          width: "clamp(200px, 40vw, 500px)",
+          height: "clamp(200px, 40vw, 500px)",
+          background: "radial-gradient(circle, rgba(6,182,212,0.09) 0%, transparent 70%)",
+          filter: "blur(clamp(35px, 6vw, 80px))",
           bottom: "5%",
           left: "5%",
           animation: "blob-drift-c 16s ease-in-out infinite",

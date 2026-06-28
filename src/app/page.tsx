@@ -32,7 +32,46 @@ export default function Home() {
       {loaded && <ContactPopup />}
 
       <SmoothScroll>
-        <div className="bg-[#080808] min-h-screen">
+        <div className="bg-[#080808] min-h-screen relative">
+          {/* Global animated background — visible on all screen sizes */}
+          <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
+            <div
+              className="absolute rounded-full"
+              style={{
+                width: "clamp(300px, 60vw, 900px)",
+                height: "clamp(300px, 60vw, 900px)",
+                background: "radial-gradient(circle, rgba(79,142,247,0.10) 0%, transparent 70%)",
+                filter: "blur(clamp(40px, 8vw, 120px))",
+                top: "-10%",
+                left: "5%",
+                animation: "blob-drift-a 20s ease-in-out infinite",
+              }}
+            />
+            <div
+              className="absolute rounded-full"
+              style={{
+                width: "clamp(250px, 50vw, 750px)",
+                height: "clamp(250px, 50vw, 750px)",
+                background: "radial-gradient(circle, rgba(139,92,246,0.09) 0%, transparent 70%)",
+                filter: "blur(clamp(40px, 8vw, 100px))",
+                top: "35%",
+                right: "0%",
+                animation: "blob-drift-b 26s ease-in-out infinite",
+              }}
+            />
+            <div
+              className="absolute rounded-full"
+              style={{
+                width: "clamp(220px, 45vw, 650px)",
+                height: "clamp(220px, 45vw, 650px)",
+                background: "radial-gradient(circle, rgba(6,182,212,0.08) 0%, transparent 70%)",
+                filter: "blur(clamp(40px, 7vw, 90px))",
+                bottom: "5%",
+                left: "25%",
+                animation: "blob-drift-c 18s ease-in-out infinite",
+              }}
+            />
+          </div>
           <Navbar loaded={loaded} />
 
           <main>
