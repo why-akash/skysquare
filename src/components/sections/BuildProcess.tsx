@@ -194,7 +194,7 @@ export default function BuildProcess() {
   return (
     <section
       id="process"
-      className="py-28 overflow-hidden"
+      className="py-16 md:py-24 lg:py-28 overflow-hidden"
       ref={ref as React.RefObject<HTMLElement>}
     >
       <div className="max-w-7xl mx-auto px-6 mb-16">

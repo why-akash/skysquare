@@ -261,7 +261,7 @@ export default function Hero({ loaded }: { loaded: boolean }) {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-20 pb-24"
       ref={containerRef}
     >
       {/* Background gradient mesh */}
@@ -279,9 +279,9 @@ export default function Hero({ loaded }: { loaded: boolean }) {
         }}
       />
 
-      {/* Floating elements layer */}
+      {/* Floating elements layer — desktop only */}
       <motion.div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none hidden lg:block"
         style={{ opacity: heroOpacity, y: heroY }}
       >
         {/* Browser window — left */}
@@ -371,7 +371,7 @@ export default function Hero({ loaded }: { loaded: boolean }) {
           {words.map((word, i) => (
             <div key={i} className="overflow-hidden">
               <motion.div
-                className={`block text-[clamp(2.8rem,7vw,7rem)] font-bold leading-[0.92] tracking-tight ${
+                className={`block text-[clamp(2.2rem,7vw,7rem)] font-bold leading-[0.92] tracking-tight ${
                   i === 1 ? "gradient-text-blue" : "text-white"
                 }`}
                 initial={{ y: "110%" }}
@@ -390,7 +390,7 @@ export default function Hero({ loaded }: { loaded: boolean }) {
 
         {/* Sub copy */}
         <motion.p
-          className="mt-8 text-white/45 text-lg max-w-lg mx-auto leading-relaxed"
+          className="mt-6 text-white/45 text-sm md:text-lg max-w-lg mx-auto leading-relaxed px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={loaded ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
@@ -442,20 +442,22 @@ export default function Hero({ loaded }: { loaded: boolean }) {
           </motion.a>
         </motion.div>
 
-        {/* Scroll indicator */}
+      </motion.div>
+
+      {/* Scroll indicator — outside hero copy, anchored to section bottom */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hidden sm:flex"
+        initial={{ opacity: 0 }}
+        animate={loaded ? { opacity: 1 } : {}}
+        transition={{ delay: 1.5 }}
+      >
+        <span className="text-white/20 text-[10px] tracking-widest uppercase">Scroll</span>
         <motion.div
-          className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          initial={{ opacity: 0 }}
-          animate={loaded ? { opacity: 1 } : {}}
-          transition={{ delay: 1.5 }}
-        >
-          <span className="text-white/20 text-[10px] tracking-widest uppercase">Scroll</span>
-          <motion.div
-            className="w-px h-10 bg-gradient-to-b from-white/30 to-transparent"
-            animate={{ scaleY: [0, 1, 0], originY: 0 }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </motion.div>
+          className="w-px h-10 bg-gradient-to-b from-white/30 to-transparent"
+          animate={{ scaleY: [0, 1, 0] }}
+          style={{ originY: 0 }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        />
       </motion.div>
     </section>
   );

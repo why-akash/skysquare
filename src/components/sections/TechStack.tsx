@@ -209,7 +209,7 @@ export default function TechStack() {
 
   return (
     <section
-        className="py-28 px-6 relative overflow-hidden"
+        className="py-16 md:py-24 lg:py-28 px-4 md:px-6 relative overflow-hidden"
         ref={ref as React.RefObject<HTMLElement>}
       >
         <AnimatedBackground />

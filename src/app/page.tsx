@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import dynamic from "next/dynamic";
 
 import Loader from "@/components/layout/Loader";
@@ -23,11 +23,12 @@ const SmoothScroll = dynamic(() => import("@/components/layout/SmoothScroll"), {
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
+  const handleLoaded = useCallback(() => setLoaded(true), []);
 
   return (
     <>
       <CustomCursor />
-      <Loader onComplete={() => setLoaded(true)} />
+      <Loader onComplete={handleLoaded} />
       {loaded && <ContactPopup />}
 
       <SmoothScroll>

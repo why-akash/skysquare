@@ -397,7 +397,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-28 px-6"
+      className="py-16 md:py-24 lg:py-28 px-4 md:px-6"
       ref={ref as React.RefObject<HTMLElement>}
     >
       <div className="max-w-7xl mx-auto">
